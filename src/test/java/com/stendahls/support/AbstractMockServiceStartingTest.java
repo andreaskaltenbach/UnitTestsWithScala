@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 /**
  * @author andreaskaltenbach
  */
-public abstract class AbstractMockServiceStartingTest {
+public abstract class AbstractMockServiceStartingTest extends AbstractTestDataCreatingTest {
 
     @Before
     public void startService() {
@@ -18,5 +18,4 @@ public abstract class AbstractMockServiceStartingTest {
     public void stopService() {
         System.out.println("Stop mock service");
     }
-
 }
