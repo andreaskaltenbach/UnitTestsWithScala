@@ -1,27 +1,26 @@
 package com.stendahls
 
-import domain.Celebrity
 import org.junit.{Test, Before}
+import support.Celebrity
+import support.Celebrity._
 
 /**
  * 
  * @author andreaskaltenbach
  */
-
 class ScalaCelebrityTest {
 
   def createCelebrityList =
     List(
-      new Celebrity("Michael Jackson", 1958, 2009),
-      new Celebrity("Madonna", 1958, null),
-      new Celebrity("Jesus", 0, 31))
+      Celebrity("Michael Jackson", 1958, 2009),
+      Celebrity("Madonna", 1958),
+      Celebrity("Jesus", deathYear = 31))
 
   def createNo1UkHitsMap =
-    scala.collection.immutable.Map.apply(
-    //Map(
-       7 -> new Celebrity("Michael Jackson", 1958, 2009),
-      13 -> new Celebrity("Madonna", 1958, null),
-       0 -> new Celebrity("Jesus", 0, 31))
+    Map(
+       7 -> Celebrity("Michael Jackson", 1958, 2009),
+      13 -> Celebrity("Madonna", 1958),
+       0 -> Celebrity("Jesus", deathYear = 31))
 
   @Test def testCelebrities = {
     createCelebrityList foreach(println(_))
