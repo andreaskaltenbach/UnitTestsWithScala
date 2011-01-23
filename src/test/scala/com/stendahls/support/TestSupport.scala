@@ -24,7 +24,7 @@ trait TestDataCreator {
 
     val celebrityService = new CelebrityServiceImpl()
 
-    var celebrities:List[Celebrity] = Nil
+    var celebrities:List[Celebrity] = _
 
     @Before def before {
         if (!TestDataCreator.testDataCreated) {
@@ -34,7 +34,7 @@ trait TestDataCreator {
 
     def createTestData {
         println("Creating test data");
-  celebrities =  List(
+        celebrities =  List(
           celebrityService.createCelebrity(new Celebrity("Michael Jackson", 1958, 2009)),
           celebrityService.createCelebrity(new Celebrity("Madonna", 1958, null)),
           celebrityService.createCelebrity(new Celebrity("Jesus", 0, 31)))
