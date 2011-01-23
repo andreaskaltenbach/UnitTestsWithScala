@@ -12,7 +12,7 @@ object Celebrity {
 
      deathYear match {
        case Some(deathYear) => new Celebrity(name, birthYear, deathYear)
-       //case None => new Celebrity(name, birthYear, null)
+       case None => new Celebrity(name, birthYear, null)
      }
 
   /** Implicit converson from Int to Some[Int] */
