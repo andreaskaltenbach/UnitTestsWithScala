@@ -5,7 +5,8 @@ import service.CelebrityServiceImpl
 import support.Celebrity
 import support.Celebrity._
 import org.junit.{Test, Before}
-import com.stendahls.Manipulator._
+import com.stendahls.support._
+import org.scalatest.junit.AssertionsForJUnit
 import com.stendahls.support.Implicits._
 import scala.collection.JavaConversions._
 import org.junit.Assert._
