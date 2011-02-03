@@ -2,7 +2,7 @@ package com.stendahls
 
 import org.junit.Test
 import service.CelebrityServiceImpl
-import support.TransactionSupport
+import support.{Celebrity, TransactionSupport}
 
 /**
  * 
@@ -14,7 +14,7 @@ class TransactionalTest extends TransactionSupport {
 
   @Test def testInTransaction {
       transactional {
-        val michael = CelebrityTest("Michael", 1958)
+        val michael = Celebrity("Michael", 1958)
         celebrityService.createCelebrity(michael)
       }
   }
