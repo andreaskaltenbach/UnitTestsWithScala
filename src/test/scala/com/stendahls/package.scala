@@ -2,7 +2,7 @@ import com.stendahls.domain.Celebrity
 
 package com.stendahls {
 
-  package object Manipulator {
+  package object support {
 
     val flipYears = (c:Celebrity) => {c.setDeathYear(c.getBirthYear - 1); c}
 
