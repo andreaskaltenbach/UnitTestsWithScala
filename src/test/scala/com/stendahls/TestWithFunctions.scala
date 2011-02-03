@@ -6,16 +6,16 @@ import support.Celebrity
 import support.Celebrity._
 import org.junit.{Test, Before}
 import com.stendahls.Manipulator._
-import org.scalatest.junit.AssertionsForJUnit
 import com.stendahls.support.Implicits._
 import scala.collection.JavaConversions._
+import org.junit.Assert._
 
 /**
  * 
  * @author andreaskaltenbach
  */
 
-class TestWithFunctions extends AssertionsForJUnit {
+class TestWithFunctions {
 
   val celebrityService = new CelebrityServiceImpl
 
@@ -26,7 +26,7 @@ class TestWithFunctions extends AssertionsForJUnit {
   def testCreateMichael {
     val michael = Celebrity("Michael Jackson", 1958, 2009)
     val result = celebrityService.createCelebrity(michael)
-    assert(michael == result)
+    assertEquals(michael, result)
   }
 
   /**
@@ -56,9 +56,9 @@ class TestWithFunctions extends AssertionsForJUnit {
     val roadrunner = Celebrity("Road Runner", 1949)
     val manipulatedRoadrunner = doEverything(roadrunner)
 
-    assert(!manipulatedRoadrunner.isAlive)
-    assert(manipulatedRoadrunner.getName() == "")
-    assert(manipulatedRoadrunner.getBirthYear() > manipulatedRoadrunner.getDeathYear())
+    assertTrue(!manipulatedRoadrunner.isAlive)
+    assertEquals("", manipulatedRoadrunner.getName())
+    assertTrue(manipulatedRoadrunner.getBirthYear() > manipulatedRoadrunner.getDeathYear())
 
     celebrityService.createCelebrity(manipulatedRoadrunner);
   }
@@ -77,10 +77,10 @@ class TestWithFunctions extends AssertionsForJUnit {
       Celebrity("Donatello", 1984),
       Celebrity("Raphael", 1984))
 
-    assert(teenageMutantNinjaTurtles.forall(t => t.isAlive))
+    assertTrue(teenageMutantNinjaTurtles.forall(t => t.isAlive))
 
     teenageMutantNinjaTurtles.foreach(killCelebrity)
 
-    assert(teenageMutantNinjaTurtles.forall(t => !t.isAlive))
+    assertTrue(teenageMutantNinjaTurtles.forall(t => !t.isAlive))
   }
 }
