@@ -45,3 +45,7 @@ trait TestDataCreator {
 object TestDataCreator {
   var testDataCreated = false
 }
+
+object Implicits {
+    implicit def returnInt(i:java.lang.Integer):Int = i.intValue
+}
