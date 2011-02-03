@@ -5,15 +5,16 @@ import service.{CelebrityAlreadyAliveException, CelebrityServiceImpl}
 import support.Celebrity
 import support.Celebrity._
 import scala.collection.JavaConversions._
+import org.scalatest.Assertions
 
-//import org.junit.Test
-import org.testng.annotations.Test
+import org.junit.Test
+//import org.testng.annotations.Test
 
 /**
  * 
  * @author andreaskaltenbach
  */
-class ResurrectionTest extends AssertionsForJUnit {
+class ResurrectionTest extends Assertions {
 
   val celebrityService = new CelebrityServiceImpl
 
