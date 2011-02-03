@@ -55,8 +55,8 @@ class ResurrectionTest extends Assertions {
 
     celebrityService.resurrect(celebrities)
 
-    assert(celebrities.exists(c => c.getName == "Michael Jackson" && c.isAlive))
-    assert(celebrities.exists(c => c.getName == "Jesus" && c.isAlive))
+    assert(celebrities.exists(c => c.getName == "Michael Jackson" && c.isAlive), "Michael is not alive")
+    assert(celebrities.exists(c => c.getName == "Jesus" && c.isAlive), "Jesus is not alive")
   }
 
   // struggle when switching between JUnit and TestNG in Java:

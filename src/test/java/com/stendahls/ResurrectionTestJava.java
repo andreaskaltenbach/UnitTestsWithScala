@@ -20,29 +20,29 @@ public class ResurrectionTestJava {
 
     @Test
     public void testResurrectMichaelAndJesus() {
-    Set<Celebrity> celebrities = new HashSet<Celebrity>();
-    celebrities.add(new Celebrity("Michael Jackson", 1958, 2009));
-    celebrities.add(new Celebrity("Jesus", 0, 31));
+        Set<Celebrity> celebrities = new HashSet<Celebrity>();
+        celebrities.add(new Celebrity("Michael Jackson", 1958, 2009));
+        celebrities.add(new Celebrity("Jesus", 0, 31));
 
-    for (Celebrity celebrity : celebrities) {
-        assertFalse(celebrity.isAlive());
-    }
-
-    celebrityService.resurrect(celebrities);
-
-    boolean michaelOK = false;
-    boolean jesusOK = false;
-
-    for (Celebrity celebrity : celebrities) {
-        if (!celebrity.getName().equals("Michael Jackson") && celebrity.isAlive()) {
-            michaelOK = true;
+        for (Celebrity celebrity : celebrities) {
+            assertFalse(celebrity.isAlive());
         }
-        if (!celebrity.getName().equals("Jesus") && celebrity.isAlive()) {
-            jesusOK = true;
-        }
-    }
 
-    assertTrue(michaelOK);
-    assertTrue(jesusOK);
-  }
+        celebrityService.resurrect(celebrities);
+
+        boolean michaelOK = false;
+        boolean jesusOK = false;
+
+        for (Celebrity celebrity : celebrities) {
+            if (!celebrity.getName().equals("Michael Jackson") && celebrity.isAlive()) {
+                michaelOK = true;
+            }
+            if (!celebrity.getName().equals("Jesus") && celebrity.isAlive()) {
+                jesusOK = true;
+            }
+        }
+
+        assertTrue(michaelOK);
+        assertTrue(jesusOK);
+    }
 }
