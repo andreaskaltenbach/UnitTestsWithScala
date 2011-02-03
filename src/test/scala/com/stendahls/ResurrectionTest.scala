@@ -57,4 +57,8 @@ class ResurrectionTest extends AssertionsForJUnit {
     assert(celebrities.exists(c => c.getName == "Michael Jackson" && c.isAlive))
     assert(celebrities.exists(c => c.getName == "Jesus" && c.isAlive))
   }
+
+  // struggle when switching between JUnit and TestNG in Java:
+  // JUnit:  assertEquals(expected, actual)
+  // TestNG: assertEquals(actual, expected)
 }
