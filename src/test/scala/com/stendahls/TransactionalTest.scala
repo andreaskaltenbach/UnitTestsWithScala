@@ -1,6 +1,7 @@
 package com.stendahls
 
 import org.junit.Test
+import service.CelebrityServiceImpl
 import support.TransactionSupport
 
 /**
@@ -9,9 +10,12 @@ import support.TransactionSupport
  */
 class TransactionalTest extends TransactionSupport {
 
+  val celebrityService = new CelebrityServiceImpl
+
   @Test def testInTransaction {
       transactional {
-        println("Do something in transaction")
+        val michael = CelebrityTest("Michael", 1958)
+        celebrityService.createCelebrity(michael)
       }
   }
 }
