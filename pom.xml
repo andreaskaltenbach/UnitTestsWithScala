@@ -74,6 +74,13 @@
         <version>5.14.1</version>
         <scope>test</scope>
     </dependency>
+      <dependency>
+    	<groupId>org.scala-tools.testing</groupId>
+    	<artifactId>scalacheck_2.8.0</artifactId>
+    	<version>1.7</version>
+    	<type>jar</type>
+    	<scope>test</scope>
+    </dependency>
 
       <dependency>
         <groupId>org.hibernate</groupId>
