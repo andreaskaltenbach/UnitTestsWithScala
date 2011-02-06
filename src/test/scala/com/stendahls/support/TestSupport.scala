@@ -3,6 +3,7 @@ package com.stendahls.support
 import org.junit.{After, Before}
 import com.stendahls.domain.Celebrity
 import com.stendahls.service.CelebrityServiceImpl
+import org.scalacheck.Gen
 
 /**
  * 
@@ -48,4 +49,9 @@ object TestDataCreator {
 
 object Implicits {
     implicit def returnInt(i:java.lang.Integer):Int = i.intValue
+
+    implicit def optionToInt(o:Option[Int]):Int = o.get
+    implicit def optionToString(o:Option[String]):String = o.get
+    implicit def optionToCelebrity(o:Option[com.stendahls.domain.Celebrity]):com.stendahls.domain.Celebrity = o.get
+    implicit def optionToCelebritySet(o:Option[Set[com.stendahls.domain.Celebrity]]):Set[com.stendahls.domain.Celebrity] = o.get
 }
