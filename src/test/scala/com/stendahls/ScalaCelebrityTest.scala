@@ -17,8 +17,8 @@ class ScalaCelebrityTest {
       new Celebrity("Jesus", 0, 31))
 
   def createNo1UkHitsMap =
-    scala.collection.immutable.Map.apply(
-    //Map(
+    //scala.collection.immutable.Map.apply(
+    Map(
        7 -> new Celebrity("Michael Jackson", 1958, 2009),
       13 -> new Celebrity("Madonna", 1958, null),
        0 -> new Celebrity("Jesus", 0, 31))
